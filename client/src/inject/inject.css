@@ -3,7 +3,7 @@
   height: 150px;
   overflow: hidden;
   position: absolute;
-  z-index: 10;
+  z-index: auto;
 }
 .ribbon::before,
 .ribbon::after {
