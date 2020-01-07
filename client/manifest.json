@@ -17,8 +17,8 @@
     "persistent": true
   },
   "permissions": [
-    "https://image-hash.herokuapp.com/*",
-    " https://localhost:*"
+    "storage",
+    "http://localhost/*"
   ],
   "content_scripts": [
     {
