@@ -1,3 +1,4 @@
+require('dotenv').config();
 const cors = require('cors');
 const axios = require('axios');
 const express = require('express');
@@ -10,9 +11,12 @@ const {
 } = require('orbs-client-sdk');
 
 const PORT = process.env.PORT || 5678;
-const IMAGE_HASH_SERVICE_URL = 'http://localhost:5000';
-const ORBS_NODE_URL = 'http://localhost:8080';
-const ORBS_VCHAIN = 42;
+const {
+  IMAGE_HASH_SERVICE_URL, 
+  ORBS_NODE_URL,
+  ORBS_VCHAIN,
+  REGISTRY_CONTRACT_NAME
+} = process.env;
 
 const orbsClient = new Client(
   ORBS_NODE_URL,
@@ -32,7 +36,7 @@ app.post('/', async (req, res) => {
   const { pHash } = data;
 
   const query = await orbsClient.createQuery(
-    'OpenRights01',
+    REGISTRY_CONTRACT_NAME,
     'getMedia',
     [argString(pHash)]
   );
