@@ -1,5 +1,5 @@
 const fetchImage = url => {
-  return fetch('http://localhost:5678', {
+  return fetch('https://verifier-extension-server.herokuapp.com', {
     method: 'POST',
     mode: 'cors',
     cache: 'no-cache',
