@@ -35,7 +35,7 @@ const buildTooltip = (data) => {
   
   return `
     Copyrights: ${copyright},
-    Posted At: ${toDateTimeString(timestamp)}
+    Posted at: ${toDateTimeString(timestamp)}
   `;
 };
 
